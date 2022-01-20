@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alterando Conteudo do HTML</title>
+</head>
+<body>
+<Header>
+    <h1>O Java script pode alterar o conteudo do HTML</h1>
+    <p>Um dos muitos metodos para HTML javaScript é o ("getElementById()" )</p>
+    <p>O exemplo abaixo "encontra" um elemento HTML com o id = "demo" e altera o conteudo do elemento (innerHTML) para "Olá"</p>
+    <p style="color: red;"> document.getElementById("demo").inner HTML= "Olá!!";</p>
+     
+    <hr>
+    <h2>Testando na pratica </h2>
+
+<p id="demo">algum conteudo na pagina </p>
+
+<button type="button" onclick='document.getElementById("demo").innerHTML = "Olá!!"'>Clque em mim </button>
+<hr>
+
+<h1>Alterar o estilos HTML CSS</h1>
+
+<P style="color: red;">document.getElementById("stilo").style.fontSize = "35px";</P>
+<h2>Testando na pratica </h2>
+<p id="stilo">Vou crescer</p>
+
+<button type="button" onclick="document.getElementById('stilo').style.fontSize = '35px'"> Aumentar </button>
+
+
+
+
+
+
+</Header>
+    
+</body>
+</html>
