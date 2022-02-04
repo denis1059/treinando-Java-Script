@@ -1,0 +1,14 @@
+body {
+    background-color: aquamarine;
+    display: flex;
+}
+
+.container{
+    width: 50%;
+    height: 50%;
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    align-items: center;
+
+}
