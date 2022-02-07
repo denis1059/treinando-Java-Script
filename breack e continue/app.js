@@ -6,7 +6,16 @@ for (let numero of numeros){
         console.log('Pulei o numero 5');
         continue;
     }
+    
     console.log (numero);
+
+    if (numero === 7){
+        console.log('7 encontrado, parando..');
+        break;
+    }
+   
 }
+
+
 
 // sempre que o laço encontrar a palavra continue, ele vai continuar enquanto 
