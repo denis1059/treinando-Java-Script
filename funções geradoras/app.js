@@ -1,5 +1,6 @@
 //
 
+
 function* geradora1(){
     //algum codigo
     yield 'valor 1';
