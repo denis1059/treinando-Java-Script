@@ -10,6 +10,7 @@ var campoPalpite = document.querySelector('.campoPalpite');
 
 var contagemPalpites = 1;
 var botaoReinicio;
+campoPalpite.focus();
 
 
 function conferirPalpite() {
@@ -70,8 +71,55 @@ function conferirPalpite() {
 
   envioPalpite.addEventListener('click', conferirPalpite);
 
-  //Aqui nós estamos adicionando um event listener ao botão envioPalpite. Esse é um método que aceita a inserção de dois valores (chamados de argumentos) — o tipo de envento que estamos monitorando (neste caso o evento click) como um string (sequência de texto), e o código que queremos executar quando o evento ocorrer (neste caso a função conferirPalpite() — note que não temos que especificar os parênteses quando estivermos escrevendo dentro de addEventListener()).
+  //Aqui nós estamos adicionando um event listener ao botão envioPalpite. Esse é um método que aceita a inserção de dois valores (chamados de argumentos) — o tipo de envento que estamos monitorando (neste caso o evento click) como uma string (sequência de texto), e o código que queremos executar quando o evento ocorrer (neste caso a função conferirPalpite() — note que não temos que especificar os parênteses quando estivermos escrevendo dentro de addEventListener()).
 
+
+  function configFimDeJogo() {
+    campoPalpite.disabled = true;
+    envioPalpite.disabled = true;
+    botaoReinicio = document.createElement('button');
+    botaoReinicio.textContent = 'Iniciar novo jogo';
+    document.body.appendChild(botaoReinicio);
+    botaoReinicio.addEventListener('click', reiniciarJogo);
+  }
+
+  //As primeiras duas linhas desabilitam a entrada de texto do formulário e o clique do botão, definindo a propriedade disabled (desabilitado) de cada um como true (verdadeiro). Isso é necessário, pois se não o fizermos, o usuário poderia submeter mais palpites depois do jogo ter terminado, o que iria bagunçar as coisas.
+
+  //As próximas três linhas geram um novo elemento <button>, define o texto de seu rótulo como "Iniciar novo jogo", e o adiciona ao final do nosso HTML existente.
+
+  //A linha final define um monitor de evento (event listener) em nosso botão, para que quando seja clicado, uma função chamada reiniciarJogo() seja executada.
+
+  function reiniciarJogo() {
+    contagemPalpites = 1;
+
+    //Coloca o valor da variável contagemPalpites novamente igual a 1.
+  
+    var reiniciarParas = document.querySelectorAll('.resultadoParas p');
+    for (var i = 0 ; i < reiniciarParas.length ; i++) {
+      reiniciarParas[i].textContent = '';
+    }
+
+    //Limpa todos os parágrafos de informativos.
+  
+    botaoReinicio.parentNode.removeChild(botaoReinicio);
+
+    //Remove o botão resete do nosso código.
+  
+    campoPalpite.disabled = false;
+    envioPalpite.disabled = false;
+    campoPalpite.value = '';
+    campoPalpite.focus();
+
+    //Habilita os elementos do formulários, esvazia e direciona o foco ao campo de texto, pronto para que um novo palpite seja inserido.
+  
+    ultimoResultado.style.backgroundColor = 'white';
+
+    //Remove a cor de fundo do parágrafo ultimoResultado.
+  
+    numeroAleatorio = Math.floor(Math.random() * 100) + 1;
+
+    //Gera um novo número aleatório para que o jogador não esteja tentando adivinhar o mesmo número novamente!
+  }
   
 
 
