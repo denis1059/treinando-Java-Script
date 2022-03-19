@@ -11,19 +11,20 @@ body {
 .container{
     margin-top: 30px;
     width: 50%;
-    height: 150px;
+    height: 590px;
     background-color: white;
     border-radius: 12px;
-    padding: 20px;
+    padding: 50px;
     
 }
 
-.relogio{
-
-    font-size: 3em;
-
+.lista{
+    font-size: 20px;
 }
 
-.pausado{
-    color: red;
+.formulario{
+    display: flex;
+    flex-flow: column;
+    float: left;
+
 }
